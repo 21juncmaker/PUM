@@ -6,6 +6,46 @@
   <title>지역문제연구소 품</title>
   <meta name="description" content="지역문제연구소 품은 지역의 생활문제를 찾고 함께 정의해, 자료와 사람의 경험을 바탕으로 지역에 맞는 답을 찾아내는 연구소입니다.">
   <style>
+    @font-face {
+      font-family: "Paperlogy";
+      src: url("assets/fonts/paperlogy-regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Paperlogy";
+      src: url("assets/fonts/paperlogy-medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Paperlogy";
+      src: url("assets/fonts/paperlogy-bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Paperlogy";
+      src: url("assets/fonts/paperlogy-extrabold.woff2") format("woff2");
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Paperlogy";
+      src: url("assets/fonts/paperlogy-black.woff2") format("woff2");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       --navy: #142248;
       --navy-deep: #09162e;
@@ -94,7 +134,8 @@
       align-items: center;
       gap: 10px;
       margin: 0 0 18px;
-      color: #c8d2d9;
+      color: rgba(255, 255, 255, 0.78);
+      font-family: "Avenir Next", Inter, "Helvetica Neue", sans-serif;
       font-size: 14px;
       font-weight: 800;
     }
@@ -218,6 +259,7 @@
     .section-kicker {
       margin-bottom: 10px;
       color: var(--field-blue);
+      font-family: "Avenir Next", Inter, "Helvetica Neue", sans-serif;
       font-size: 13px;
       font-weight: 900;
     }
@@ -231,7 +273,7 @@
     }
 
     .lead {
-      color: #4b5361;
+      color: var(--muted);
       font-size: 18px;
     }
 
@@ -312,7 +354,7 @@
 
     .value p {
       margin-bottom: 0;
-      color: #3f4652;
+      color: var(--muted);
     }
 
     .band {
@@ -340,6 +382,7 @@
       padding-bottom: 8px;
       border-bottom: 4px solid var(--field-blue);
       color: var(--field-blue);
+      font-family: "Avenir Next", Inter, "Helvetica Neue", sans-serif;
       font-size: 13px;
       font-weight: 900;
     }
@@ -360,7 +403,7 @@
     .project p,
     .network-card p {
       margin-bottom: 0;
-      color: #515a68;
+      color: var(--muted);
     }
 
     .method {
@@ -383,6 +426,7 @@
 
     .method-step span {
       color: var(--field-blue);
+      font-family: "Avenir Next", Inter, "Helvetica Neue", sans-serif;
       font-size: 13px;
       font-weight: 900;
     }
@@ -408,19 +452,26 @@
       background: var(--paper);
     }
 
-    .tag {
-      display: inline-flex;
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 0;
       margin-bottom: 14px;
-      padding: 4px 10px;
-      border-radius: 4px;
-      background: rgba(84, 129, 143, 0.12);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
       color: var(--field-blue);
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 700;
     }
 
-    .project:nth-child(2n) .tag {
-      background: rgba(73, 111, 98, 0.12);
+    .project-meta span:not(:last-child)::after {
+      content: "/";
+      margin: 0 8px;
+      color: var(--line);
+    }
+
+    .project:nth-child(2n) .project-meta {
       color: var(--green);
     }
 
@@ -478,7 +529,7 @@
 
     footer {
       padding: 28px 0;
-      background: #071124;
+      background: var(--navy-deep);
       color: rgba(255, 255, 255, 0.58);
       font-size: 13px;
     }
@@ -673,7 +724,7 @@
       <div class="section-inner">
         <div class="section-head">
           <p class="section-kicker">WHAT WE DO</p>
-          <h2>문제를 찾고, 함께 정의하고, 지역에 맞는 답을 만듭니다.</h2>
+          <h2>문제를 찾고, 함께 정의하고, 지역에 맞는 답을 찾아냅니다.</h2>
           <p class="lead">정책연구, 주민참여, 리빙랩, 교육과 워크숍을 연결해 지역의 조건에 맞는 프로젝트를 설계합니다.</p>
         </div>
         <div class="services-grid">
@@ -721,28 +772,28 @@
         <div class="method">
           <div class="method-step">
             <span>STEP 1</span>
-            <h3>지역을 살핍니다</h3>
+            <h3>문제 발견</h3>
             <p>자료와 현장을 살피고 생활 속에서 드러나는 문제의 단서를 찾습니다.</p>
           </div>
           <div class="method-step">
             <span>STEP 2</span>
-            <h3>경험을 모읍니다</h3>
-            <p>당사자와 주민, 행정, 기관의 서로 다른 경험과 관점을 듣습니다.</p>
+            <h3>참여 설계</h3>
+            <p>당사자와 주민, 행정, 기관이 함께 말하고 판단할 수 있는 과정을 설계합니다.</p>
           </div>
           <div class="method-step">
             <span>STEP 3</span>
-            <h3>문제를 함께 정의합니다</h3>
-            <p>수집한 근거와 목소리를 바탕으로 함께 풀어야 할 문제를 분명히 합니다.</p>
+            <h3>근거 정리</h3>
+            <p>조사와 참여에서 모은 경험과 자료를 분석해 핵심 의제를 분명히 합니다.</p>
           </div>
           <div class="method-step">
             <span>STEP 4</span>
-            <h3>지역에 맞는 답을 찾습니다</h3>
-            <p>지역의 조건과 자원을 고려해 정책, 사업, 교육의 대안을 구체화합니다.</p>
+            <h3>실행 제안</h3>
+            <p>지역의 조건과 자원을 고려해 정책, 사업, 교육의 실행 대안을 제안합니다.</p>
           </div>
           <div class="method-step">
             <span>STEP 5</span>
-            <h3>실행으로 연결합니다</h3>
-            <p>보고서와 제안에 머물지 않도록 운영, 공유, 후속 협업까지 이어갑니다.</p>
+            <h3>변화</h3>
+            <p>제안이 현장 운영과 공유, 후속 협업으로 이어지도록 연결합니다.</p>
           </div>
         </div>
       </div>
@@ -757,32 +808,32 @@
         </div>
         <div class="projects-grid">
           <article class="project">
-            <span class="tag">정책연구</span>
+            <p class="project-meta"><span>2025</span><span>정책연구</span><span>통영시</span></p>
             <h3>통영시 지속가능성 평가 연구</h3>
             <p>지역 지속가능성의 현재를 진단하고 정책 방향을 도출한 연구 용역.</p>
           </article>
           <article class="project">
-            <span class="tag">정책연구</span>
+            <p class="project-meta"><span>2025</span><span>정책연구</span><span>통영시의회</span></p>
             <h3>통영시 인구감소 위기 대응 방안 연구</h3>
             <p>지역 인구구조 변화와 위기 대응 전략을 검토한 의회 연구 용역.</p>
           </article>
           <article class="project">
-            <span class="tag">해커톤</span>
+            <p class="project-meta"><span>2025</span><span>기획·운영</span><span>김해시·인제대학교</span></p>
             <h3>정책주권 지역문제 해결 해커톤</h3>
-            <p>김해시와 인제대학교 협력 기반의 문제발굴, 팀 코칭, 정책 아이디어 고도화 과정.</p>
+            <p>지역문제 발굴부터 팀 코칭과 정책 아이디어 고도화까지 운영한 협업 과정.</p>
           </article>
           <article class="project">
-            <span class="tag">문화도시</span>
+            <p class="project-meta"><span>2025</span><span>기획·운영</span><span>김해문화관광재단</span></p>
             <h3>김해문화도시 도시문화실험실</h3>
             <p>시민이 도시문화를 실험하고 실행하도록 돕는 워크숍과 프로젝트 운영.</p>
           </article>
           <article class="project">
-            <span class="tag">교육</span>
-            <h3>김해청년학교와 남해청년네트워크</h3>
-            <p>청년의 정책참여, 네트워킹, 지역활동 역량 강화를 위한 교육·운영.</p>
+            <p class="project-meta"><span>2025</span><span>기획·운영</span><span>김해시의생명산업진흥원</span></p>
+            <h3>김해청년학교</h3>
+            <p>청년의 정책 참여와 지역활동 역량을 높이는 교육 프로그램 기획·운영.</p>
           </article>
           <article class="project">
-            <span class="tag">공론장</span>
+            <p class="project-meta"><span>2025</span><span>교육·운영</span><span>경남여성재단</span></p>
             <h3>경상남도 여성정책발굴단</h3>
             <p>도민의 경험을 정책 의제로 전환하는 교육과 참여형 운영 과정.</p>
           </article>
@@ -834,8 +885,8 @@
 
   <footer>
     <div class="footer-inner">
-      <span>지역문제연구소 품</span>
-      <span>PUM Local Solutions Lab</span>
+      <span>지역문제연구소 품 / PUM Local Solutions Lab</span>
+      <span>지역의 문제를 찾고 함께 정의해, 지역에 맞는 답을 찾아냅니다.</span>
     </div>
   </footer>
 </body>
